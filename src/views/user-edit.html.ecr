@@ -1,12 +1,12 @@
 <form action="<%= base_url %>admin/user/edit" method="post" accept-charset="utf-8">
 
   <div class="uk-margin">
-    <label class="uk-form-label" for="form-stacked-text">Username</label>
+    <label class="uk-form-label" for="form-stacked-text">Friend 名</label>
     <input class="uk-input" type="text" name="username" <%- if username -%> value=<%= username %> <%- end -%>>
   </div>
   <%- if new_user -%>
     <div class="uk-margin">
-      <label class="uk-form-label" for="form-stacked-text">Password</label>
+      <label class="uk-form-label" for="form-stacked-text">Friend 密码</label>
       <input class="uk-input" type="password" name="password">
     </div>
   <%- end -%>
@@ -17,9 +17,9 @@
 
   <%- unless new_user -%>
     <div>
-      <button class="uk-button uk-button-default" type="button" uk-toggle="target: #change-password">Change Password</button>
+      <button class="uk-button uk-button-default" type="button" uk-toggle="target: #change-password">修改密码</button>
       <div id="change-password" class="uk-margin" hidden>
-        <label class="uk-form-label" for="form-stacked-text">New Password</label>
+        <label class="uk-form-label" for="form-stacked-text">新密码</label>
         <input class="uk-input" type="password" name="password">
       </div>
     </div>

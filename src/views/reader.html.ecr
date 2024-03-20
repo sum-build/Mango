@@ -34,9 +34,9 @@
               />
           </template>
           <%- if next_entry_url -%>
-            <button id="next-btn" class="uk-align-center uk-button uk-button-primary" @click="nextEntry('<%= next_entry_url %>')">Next Entry</button>
+            <button id="next-btn" class="uk-align-center uk-button uk-button-primary" @click="nextEntry('<%= next_entry_url %>')">下一话</button>
           <%- else -%>
-            <button id="next-btn" class="uk-align-center uk-button uk-button-primary" @click="exitReader('<%= exit_url %>')">Exit Reader</button>
+            <button id="next-btn" class="uk-align-center uk-button uk-button-primary" @click="exitReader('<%= exit_url %>')">不看了？</button>
           <%- end -%>
         </div>
 
@@ -74,7 +74,7 @@
             <p x-text="`Progress: ${selectedIndex}/${items.length} (${(selectedIndex/items.length * 100).toFixed(1)}%)`"></p>
           </div>
           <div class="uk-margin">
-            <label class="uk-form-label" for="page-select">Jump to Page</label>
+            <label class="uk-form-label" for="page-select">当前页码</label>
             <div class="uk-form-controls">
               <select id="page-select" class="uk-select" @change="pageChanged()" x-model="selectedIndex">
                 <%- (1..entry.pages).each do |p| -%>
@@ -85,48 +85,48 @@
           </div>
 
           <div class="uk-margin">
-            <label class="uk-form-label" for="mode-select">Mode</label>
+            <label class="uk-form-label" for="mode-select">阅读模式</label>
             <div class="uk-form-controls">
               <select id="mode-select" class="uk-select" @change="modeChanged($nextTick)">
-                <option value="continuous">Continuous</option>
-                <option value="paged">Paged</option>
+                <option value="continuous">拼接</option>
+                <option value="paged">翻页</option>
               </select>
             </div>
           </div>
 
           <div class="uk-margin" x-show="mode !== 'continuous'">
-            <label class="uk-form-label" for="mode-select">Page fit</label>
+            <label class="uk-form-label" for="mode-select">画面自适应</label>
             <div class="uk-form-controls">
               <select id="fit-select" class="uk-select" @change="fitChanged()">
-                <option value="vert">Fit height</option>
-                <option value="horz">Fit width</option>
-                <option value="real">Real size</option>
+                <option value="vert">适应高度</option>
+                <option value="horz">适应宽度</option>
+                <option value="real">真实大小</option>
               </select>
             </div>
           </div>
 
           <div class="uk-margin" x-show="mode === 'continuous'">
-            <label class="uk-form-label" for="margin-range" x-text="`Page Margin: ${margin}px`"></label>
+            <label class="uk-form-label" for="margin-range" x-text="`页间距: ${margin}px`"></label>
             <div class="uk-form-controls">
               <input id="margin-range" class="uk-range" type="range" min="0" max="50" step="5" x-model="margin" @change="marginChanged()">
             </div>
           </div>
 
           <div class="uk-margin uk-form-horizontal" x-show="mode !== 'continuous'">
-            <label class="uk-form-label" for="enable-flip-animation">Enable Flip Animation</label>
+            <label class="uk-form-label" for="enable-flip-animation">打开翻页动画</label>
             <div class="uk-form-controls">
               <input id="enable-flip-animation" class="uk-checkbox" type="checkbox" x-model="enableFlipAnimation" @change="enableFlipAnimationChanged()">
             </div>
           </div>
           <div class="uk-margin uk-form-horizontal" x-show="mode !== 'continuous'">
-            <label class="uk-form-label" for="preload-lookahead" x-text="`Preload Image: ${preloadLookahead} page(s)`"></label>
+            <label class="uk-form-label" for="preload-lookahead" x-text="`提前加载页数: ${preloadLookahead} page(s)`"></label>
             <div class="uk-form-controls">
               <input id="preload-lookahead" class="uk-range" type="range" min="0" max="5" step="1" x-model.number="preloadLookahead" @change="preloadLookaheadChanged()">
             </div>
           </div>
 
           <div class="uk-margin uk-form-horizontal" x-show="mode !== 'continuous'">
-            <label class="uk-form-label" for="enable-right-to-left">Right to Left</label>
+            <label class="uk-form-label" for="enable-right-to-left">从右向左</label>
             <div class="uk-form-controls">
               <input id="enable-right-to-left" class="uk-checkbox" type="checkbox" x-model="enableRightToLeft" @change="enableRightToLeftChanged()">
             </div>
@@ -134,7 +134,7 @@
           <hr class="uk-divider-icon">
 
           <div class="uk-margin">
-            <label class="uk-form-label" for="entry-select">Jump to Entry</label>
+            <label class="uk-form-label" for="entry-select">当前话</label>
             <div class="uk-form-controls">
               <select id="entry-select" class="uk-select" @change="entryChanged()">
                 <% entries.each do |e| %>
@@ -151,12 +151,12 @@
         </div>
         <div class="uk-modal-footer uk-text-right">
           <% if previous_entry_url %>
-            <a class="uk-button uk-button-default uk-margin-small-bottom uk-margin-small-right" href="<%= previous_entry_url %>">Previous Entry</a>
+            <a class="uk-button uk-button-default uk-margin-small-bottom uk-margin-small-right" href="<%= previous_entry_url %>">前一话</a>
           <% end %>
           <% if next_entry_url %>
-            <a class="uk-button uk-button-default uk-margin-small-bottom uk-margin-small-right" href="<%= next_entry_url %>">Next Entry</a>
+            <a class="uk-button uk-button-default uk-margin-small-bottom uk-margin-small-right" href="<%= next_entry_url %>">下一话</a>
           <% end %>
-          <a class="uk-button uk-button-danger uk-margin-small-bottom uk-margin-small-right" href="<%= exit_url %>">Exit Reader</a>
+          <a class="uk-button uk-button-danger uk-margin-small-bottom uk-margin-small-right" href="<%= exit_url %>">不看了？</a>
         </div>
       </div>
     </div>

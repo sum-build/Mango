@@ -3,7 +3,7 @@
     <button class="uk-modal-close-default" type="button" uk-close></button>
     <div class="uk-modal-header">
       <div>
-        <h3 class="uk-modal-title uk-margin-remove-top">Error</h3>
+        <h3 class="uk-modal-title uk-margin-remove-top">错误</h3>
       </div>
       <p class="uk-text-meta uk-margin-remove-bottom"><%= entry.path %></p>
       <p class="uk-text-meta uk-margin-remove-top"><%= entry.err_msg %></p>
@@ -11,9 +11,9 @@
     <div class="uk-modal-body">
       <p uk-margin>
       <% if next_entry = entry.next_entry username %>
-        <a class="uk-button uk-button-default" href="<%= base_url %>reader/<%= entry.book.id %>/<%= next_entry.id %>">Next Entry</a>
+        <a class="uk-button uk-button-default" href="<%= base_url %>reader/<%= entry.book.id %>/<%= next_entry.id %>">下一话</a>
       <% end %>
-      <a class="uk-button uk-button-primary" href="<%= base_url %>book/<%= entry.book.id %>">Return to Title</a>
+      <a class="uk-button uk-button-primary" href="<%= base_url %>book/<%= entry.book.id %>">返回介绍</a>
       </p>
     </div>
   </div>

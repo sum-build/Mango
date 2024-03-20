@@ -33,7 +33,7 @@ function showModal(encodedPath, pages, percentage, encodedeTitle, encodedEntryTi
 		$('#read-btn').attr('hidden', '');
 		$('#continue-btn').attr('hidden', '');
 	} else {
-		$('#continue-btn').text('Continue from ' + percentage + '%');
+		$('#continue-btn').text('从上次开始 (' + percentage + '%)');
 	}
 
 	$('#modal-entry-title').find('span').text(entry);

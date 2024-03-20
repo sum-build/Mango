@@ -2,7 +2,7 @@ const readerComponent = () => {
 	return {
 		loading: true,
 		mode: 'continuous', // Can be 'continuous', 'height' or 'width'
-		msg: 'Loading the web reader. Please wait...',
+		msg: '嘿呀~漫画来咯！稍等哦~',
 		alertClass: 'uk-alert-primary',
 		items: [],
 		curItem: {},

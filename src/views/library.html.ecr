@@ -1,18 +1,18 @@
-<h2 class=uk-title>Library</h2>
-<p class="uk-text-meta"><%= titles.size %> titles found</p>
+<h2 class=uk-title>Mango漫库</h2>
+<p class="uk-text-meta">漫库里有 <%= titles.size %> 部漫画哦~ 暂时（</p>
 <div class="uk-grid-small" uk-grid>
   <div class="uk-margin-bottom uk-width-3-4@s">
     <form class="uk-search uk-search-default">
       <span uk-search-icon></span>
-      <input class="uk-search-input" type="search" placeholder="Search">
+      <input class="uk-search-input" type="search" placeholder="搜索漫画...">
     </form>
   </div>
   <div class="uk-margin-bottom uk-width-1-4@s">
     <% hash = {
-      "auto" => "Auto",
-      "title" => "Name",
-      "time_modified" => "Date Modified",
-      "progress" => "Progress"
+      "auto" => "自动排序",
+      "title" => "名称",
+      "time_modified" => "修改日期",
+      "progress" => "观看进度"
     } %>
     <%= render_component "sort-form" %>
   </div>

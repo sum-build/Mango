@@ -27,7 +27,7 @@
   </h2>
 </div>
 <ul class="uk-breadcrumb">
-  <li><a href="<%= base_url %>library">Library</a></li>
+  <li><a href="<%= base_url %>library">Mango漫库</a></li>
   <%- title.parents.each do |t| -%>
     <li><a href="<%= base_url %>book/<%= t.id %>"><%= t.display_name %></a></li>
   <%- end -%>
@@ -120,10 +120,10 @@
         <progress id="upload-progress" class="uk-progress" value="0" max="100" hidden></progress>
       </div>
       <div id="title-progress-control" hidden>
-        <label class="uk-form-label">Progress</label>
+        <label class="uk-form-label">观看进度</label>
         <p class="uk-margin-remove-vertical">
-        <button id="read-btn" class="uk-button uk-button-default" onclick="updateProgress('<%= title.id %>', null, 1)">Mark all as read (100%)</button>
-        <button id="unread-btn" class="uk-button uk-button-default" onclick="updateProgress('<%= title.id %>', null, 0)">Mark all as unread (0%)</button>
+        <button id="read-btn" class="uk-button uk-button-default" onclick="updateProgress('<%= title.id %>', null, 1)">标记为看过 (100%)</button>
+        <button id="unread-btn" class="uk-button uk-button-default" onclick="updateProgress('<%= title.id %>', null, 0)">标记为未看 (0%)</button>
         </p>
       </div>
     </div>

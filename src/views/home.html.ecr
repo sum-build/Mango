@@ -23,10 +23,9 @@
 
   <div class="uk-container uk-text-center">
     <i class="fas fa-book-open" style="font-size: 80px;"></i>
-    <h2>Read your first manga</h2>
-    <p>Once you start reading, Mango will remember where you left off
-    and show your entries here.</p>
-    <a href="<%= base_url %>library" class="uk-button uk-button-default">View library</a>
+    <h2>开始你的Mango之旅吧！</h2>
+    <p>开始浏览漫画后，这里就会显示你的追漫记录啦~</p>
+    <a href="<%= base_url %>library" class="uk-button uk-button-default">Mango，启动！</a>
   </div>
 
 <%- elsif new_user == false && empty_library == false -%>
@@ -34,13 +33,13 @@
   <%- if continue_reading.empty? && recently_added.empty? -%>
     <div class="uk-container uk-text-center">
       <img src="<%= base_url %>img/banner.png" style="max-width: 400px; padding: 0 20px;">
-      <p>A self-hosted manga server and reader</p>
-      <a href="<%= base_url %>library" class="uk-button uk-button-default">View library</a>
+      <p>开始浏览漫画后，这里就会显示你的追漫记录啦~</p>
+      <a href="<%= base_url %>library" class="uk-button uk-button-default">查看漫库</a>
     </div>
   <%- end -%>
 
   <%- unless continue_reading.empty? -%>
-    <h2 class="uk-title home-headings">Continue Reading</h2>
+    <h2 class="uk-title home-headings">上次追到~</h2>
     <div class="uk-child-width-1-4@m uk-child-width-1-2" uk-grid>
       <%- continue_reading.each do |cr| -%>
         <% item = cr[:entry] %>
@@ -51,7 +50,7 @@
   <%- end -%>
 
   <%- unless start_reading.empty? -%>
-    <h2 class="uk-title home-headings">Start Reading</h2>
+    <h2 class="uk-title home-headings">新漫开追！</h2>
     <div class="uk-child-width-1-4@m uk-child-width-1-2" uk-grid>
       <%- start_reading.each do |t| -%>
         <% item = t %>
@@ -62,7 +61,7 @@
   <%- end -%>
 
   <%- unless recently_added.empty? -%>
-    <h2 class="uk-title home-headings">Recently Added</h2>
+    <h2 class="uk-title home-headings">漫库上新~</h2>
     <div class="uk-child-width-1-4@m uk-child-width-1-2" uk-grid>
       <%- recently_added.each do |ra| -%>
         <% item = ra %>
