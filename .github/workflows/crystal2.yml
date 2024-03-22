@@ -1,19 +1,21 @@
-name: Build
+name: Crystal CI
 
 on:
   push:
-    branches: [ master, dev, hotfix/* ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ master, dev ]
+    branches: [ "master" ]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+
     container:
-      image: crystallang/crystal:1.0.0-alpine
+      image: crystallang/crystal
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install dependencies
       run: apk add --no-cache yarn yaml-static sqlite-static libarchive-dev libarchive-static acl-static expat-static zstd-static lz4-static bzip2-static libjpeg-turbo-dev libpng-dev tiff-dev
     - name: Build

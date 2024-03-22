@@ -1,4 +1,4 @@
-name: Build
+name: BuildCrystal
 
 on:
   push:
@@ -8,6 +8,8 @@ on:
 
 jobs:
   build:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+
     runs-on: ubuntu-latest
     container:
       image: crystallang/crystal:1.0.0-alpine
