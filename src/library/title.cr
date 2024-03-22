@@ -343,8 +343,8 @@ class Title
     tsize = titles.size
     esize = entries.size
 
-    ary << "#{tsize} #{tsize > 1 ? "titles" : "title"}" if tsize > 0
-    ary << "#{esize} #{esize > 1 ? "entries" : "entry"}" if esize > 0
+    ary << "#{tsize} #{tsize > 1 ? "部漫画哦~ 暂时（" : "部漫画哦~ 暂时（"}" if tsize > 0
+    ary << "#{esize} #{esize > 1 ? "话哦~ 暂时（" : "话哦~ 暂时（"}" if esize > 0
     ary.join " and "
   end
 

@@ -9,19 +9,12 @@
         <div id="mobile-nav" uk-offcanvas="overlay: true">
           <div class="uk-offcanvas-bar uk-flex uk-flex-column">
             <ul class="uk-nav-parent-icon uk-nav-primary uk-nav-center uk-margin-auto-vertical" uk-nav>
-              <li><a href="<%= base_url %>">私の金屋</a></li>
-              <li><a href="<%= base_url %>library">Mango漫库</a></li>
-              <li><a href="<%= base_url %>tags">Tags</a></li>
+              <a class="uk-navbar-item uk-logo" href="<%= base_url %>"><img src="<%= base_url %>img/icons/icon.png" style="width:90px;height:90px;"></a>
+              <li><a href="<%= base_url %>">书架</a></li>
+              <li><a href="<%= base_url %>library">Mango 漫库</a></li>
+              <li><a href="<%= base_url %>tags">赞助❤️</a></li>
               <% if is_admin %>
                 <li><a href="<%= base_url %>admin">Admin</a></li>
-                <li class="uk-parent">
-                  <a href="#">Download</a>
-                  <ul class="uk-nav-sub">
-                    <li><a href="<%= base_url %>download/plugins">Plugins</a></li>
-                    <li><a href="<%= base_url %>admin/downloads">Download Manager</a></li>
-                    <li><a href="<%= base_url %>admin/subscriptions">Subscription Manager</a></li>
-                  </ul>
-                </li>
               <% end %>
               <hr uk-divider>
               <li><a onclick="toggleTheme()"><i class="fas fa-adjust"></i></a></li>
@@ -39,23 +32,11 @@
         <div class="uk-navbar-left uk-visible@m">
           <a class="uk-navbar-item uk-logo" href="<%= base_url %>"><img src="<%= base_url %>img/icons/icon.png" style="width:90px;height:90px;"></a>
           <ul class="uk-navbar-nav">
-            <li><a href="<%= base_url %>">私の金屋</a></li>
+            <li><a href="<%= base_url %>">书架</a></li>
             <li><a href="<%= base_url %>library">Mango漫库</a></li>
-            <li><a href="<%= base_url %>tags">Tags</a></li>
+            <li><a href="<%= base_url %>tags">赞助❤️</a></li>
             <% if is_admin %>
               <li><a href="<%= base_url %>admin">Admin</a></li>
-              <li>
-                <a href="#">Download</a>
-                <div class="uk-navbar-dropdown">
-                  <ul class="uk-nav uk-navbar-dropdown-nav">
-                    <li class="uk-nav-header">Source</li>
-                    <li><a href="<%= base_url %>download/plugins">Plugins</a></li>
-                    <li class="uk-nav-divider"></li>
-                    <li><a href="<%= base_url %>admin/downloads">Download Manager</a></li>
-                    <li><a href="<%= base_url %>admin/subscriptions">Subscription Manager</a></li>
-                  </ul>
-                </div>
-              </li>
             <% end %>
           </ul>
         </div>

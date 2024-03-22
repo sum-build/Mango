@@ -34,7 +34,7 @@
               />
           </template>
           <%- if next_entry_url -%>
-            <button id="next-btn" class="uk-align-center uk-button uk-button-primary" @click="nextEntry('<%= next_entry_url %>')">下一话</button>
+            <button id="next-btn" class="uk-align-center uk-button uk-button-primary" @click="nextEntry('<%= next_entry_url %>')">下一话 →</button>
           <%- else -%>
             <button id="next-btn" class="uk-align-center uk-button uk-button-primary" @click="exitReader('<%= exit_url %>')">不看了？</button>
           <%- end -%>
@@ -67,11 +67,11 @@
         <button class="uk-modal-close-default" type="button" uk-close></button>
         <div class="uk-modal-header">
           <h3 class="uk-modal-title break-word"><%= entry.display_name %></h3>
-          <p class="uk-text-meta uk-margin-remove-bottom break-word"><%= entry.path %></p>
+          <p class="uk-text-meta uk-margin-remove-bottom break-word">诶嘿嘿~ 这部漫画...它好看么？</p>
         </div>
         <div class="uk-modal-body">
           <div class="uk-margin">
-            <p x-text="`Progress: ${selectedIndex}/${items.length} (${(selectedIndex/items.length * 100).toFixed(1)}%)`"></p>
+            <p x-text="`观看进度: ${selectedIndex}/${items.length} (${(selectedIndex/items.length * 100).toFixed(1)}%)`"></p>
           </div>
           <div class="uk-margin">
             <label class="uk-form-label" for="page-select">当前页码</label>
@@ -151,10 +151,10 @@
         </div>
         <div class="uk-modal-footer uk-text-right">
           <% if previous_entry_url %>
-            <a class="uk-button uk-button-default uk-margin-small-bottom uk-margin-small-right" href="<%= previous_entry_url %>">前一话</a>
+            <a class="uk-button uk-button-default uk-margin-small-bottom uk-margin-small-right" href="<%= previous_entry_url %>">← 上一话</a>
           <% end %>
           <% if next_entry_url %>
-            <a class="uk-button uk-button-default uk-margin-small-bottom uk-margin-small-right" href="<%= next_entry_url %>">下一话</a>
+            <a class="uk-button uk-button-default uk-margin-small-bottom uk-margin-small-right" href="<%= next_entry_url %>">下一话 →</a>
           <% end %>
           <a class="uk-button uk-button-danger uk-margin-small-bottom uk-margin-small-right" href="<%= exit_url %>">不看了？</a>
         </div>

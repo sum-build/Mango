@@ -41,7 +41,7 @@ function showModal(encodedPath, pages, percentage, encodedeTitle, encodedEntryTi
 	$('#modal-entry-title').next().attr('data-entry-id', entryID);
 	$('#modal-entry-title').next().find('.title-rename-field').val(entry);
 	$('#path-text').text(zipPath);
-	$('#pages-text').text(pages + ' pages');
+	$('#pages-text').text(pages + ' 页');
 
 	$('#beginning-btn').attr('href', `${base_url}reader/${titleID}/${entryID}/1`);
 	$('#continue-btn').attr('href', `${base_url}reader/${titleID}/${entryID}`);
