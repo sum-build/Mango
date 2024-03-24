@@ -73,14 +73,14 @@
             <p class="uk-text-meta uk-margin-remove-bottom">Error <span uk-icon="info"></span></p>
             <div uk-dropdown><%= item.err_msg %></div>
           <% else %>
-            <p class="uk-text-meta"><%= item.pages %> pages</p>
+            <p class="uk-text-meta"><%= item.pages %> 页</p>
           <% end %>
         <% end %>
         <% if item.is_a? Title %>
           <% if grouped_count == 1 %>
             <p class="uk-text-meta"><%= item.content_label %></p>
           <% else %>
-            <p class="uk-text-meta"><%= grouped_count %> new entries</p>
+            <p class="uk-text-meta"><%= grouped_count %> 个新话</p>
           <% end %>
         <% end %>
       </div>
