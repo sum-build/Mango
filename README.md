@@ -2,7 +2,9 @@
 
 # Mango 漫果
 
-由 Mango 修改并翻译而来的中文本地化版本，仅供 Mango 漫果 使用。Mango is a self-hosted manga server and reader. Its features include
+由 Mango 修改并翻译而来的中文本地化版本，仅供 Mango 漫果 使用。Mango is a self-hosted manga server and reader.
+
+##特色功能
 
 - 多用户支持
 - 支持 OPDS
