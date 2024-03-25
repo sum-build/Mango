@@ -7,7 +7,7 @@
     <div class="uk-offcanvas-content">
       <div class="uk-navbar-container uk-navbar-transparent" uk-navbar="uk-navbar">
         <div id="mobile-nav" uk-offcanvas="overlay: true">
-          <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+          <div class="uk-offcanvas-bar uk-flex uk-flex-column" style="background: #fff0 !important;">
             <ul class="uk-nav-parent-icon uk-nav-primary uk-nav-center uk-margin-auto-vertical" uk-nav>
               <a class="uk-navbar-item uk-logo" href="<%= base_url %>"><img src="<%= base_url %>img/icons/icon.png" style="width:231px;height:168px;"></a>
               <li><a href="<%= base_url %>">书架</a></li>
@@ -20,6 +20,10 @@
               <li><a onclick="toggleTheme()"><i class="fas fa-adjust"></i></a></li>
               <li><a href="<%= base_url %>logout">登出</a></li>
             </ul>
+            <video id="background-video" loop muted autoplay style="position: absolute; top: 0; left: 0; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1; object-fit: cover;">
+            <source src="https://jsd.cdn.zzko.cn/gh/lizina66/box@main/acgapi/acg/12374.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
