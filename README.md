@@ -2,6 +2,7 @@
 
 # Mango 漫果
 
+在 漫果 上试图增加自动构建
 由 Mango 修改并翻译而来的中文本地化版本，仅供 Mango 漫果 使用。Mango is a self-hosted manga server and reader.
 
 ## 特色功能
