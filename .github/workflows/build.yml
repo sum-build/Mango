@@ -12,23 +12,27 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: crystallang/crystal:1.0.0-alpine
-
     steps:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: apk add --no-cache yarn yaml-static sqlite-static libarchive-dev libarchive-static acl-static expat-static zstd-static lz4-static bzip2-static libjpeg-turbo-dev libpng-dev tiff-dev
-    - name: Build
-      run: make static || make static
     - name: build arm64v8 object file
       run: make arm64v8 || make arm64v8
     - name: Upload object files
       uses: actions/upload-artifact@v2
       with:
-        name: object files
+        name: objects
         path: ./*.o
+
+
   upload:
     runs-on: ubuntu-latest
+    needs: build
     steps:
+    - name: Download math result for job 1
+      uses: actions/download-artifact@v4
+      with:
+        name: objects
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
       with:
@@ -52,4 +56,4 @@ jobs:
         file: Dockerfile.arm64v8
         platforms: linux/arm64
         push: true
-        tags: 'ghcr.io/sum-build/Mango:latest'
+        tags: 'ghcr.io/sum-build/mango:latest'
