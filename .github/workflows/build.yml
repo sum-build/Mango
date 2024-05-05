@@ -23,8 +23,8 @@ jobs:
     - name: Upload object files
       uses: actions/upload-artifact@v2
       with:
-        name: objects
-        path: ./*.o
+        name: middle_file
+        path: ./mango-arm64v8.o
 
 
   upload:
@@ -34,7 +34,7 @@ jobs:
     - name: Download math result for job 1
       uses: actions/download-artifact@v4
       with:
-        name: objects
+        name: middle_file
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
       with:
