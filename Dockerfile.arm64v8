@@ -1,4 +1,4 @@
-FROM arm64v8/ubuntu:22.04 AS build
+FROM arm64v8/ubuntu:18.04 AS build
 
 RUN apt-get update && apt-get install -y wget git make llvm-11 g++ libsqlite3-dev libyaml-dev libgc-dev libssl-dev libcrypto++-dev libevent-dev libgmp-dev zlib1g-dev libpcre++-dev pkg-config libarchive-dev libxml2-dev libacl1-dev nettle-dev liblzo2-dev liblzma-dev libbz2-dev libjpeg-turbo8-dev libpng-dev libtiff-dev
 
@@ -13,7 +13,8 @@ RUN cc 'mango-arm64v8.o' -o '/usr/local/bin/mango' -rdynamic -lxml2 -L/image_siz
 
 CMD ["/usr/local/bin/mango"]
 
-FROM arm64v8/ubuntu:22.04 AS runtime
+FROM arm64v8/ubuntu:18.04 AS runtime
+RUN apt-get update && apt-get install -y curl libsqlite3-0 libyaml-0-2 libgc1c2 libssl1.1 libevent-2.1-6 libgmp10 zlib1g libarchive13 libxml2 libacl1 nettle-bin liblzo2-2 liblzma5 libbz2-1.0 libjpeg-turbo8 libpng-tools libtiff-tools
 WORKDIR /root
 COPY --from=build /usr/local/bin/mango /usr/local/bin/mango
-CMD ["/usr/local/bash"]
+CMD ["/usr/local/bin/mango"]
